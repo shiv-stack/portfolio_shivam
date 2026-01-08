@@ -1,0 +1,8 @@
+/* Profile Image Styles */
+img[alt*="Tushar Negi"] {
+  transition: transform 0.3s ease;
+}
+
+img[alt*="Tushar Negi"]:hover {
+  transform: scale(1.05);
+}
