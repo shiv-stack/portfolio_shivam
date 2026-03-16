@@ -685,6 +685,57 @@
   </div>
 </section>
 
+<!-- Our Clients Section -->
+<section id="clients" class="py-24 bg-gray-50 dark:bg-slate-800">
+  <div class="container mx-auto px-6">
+    <h2 data-aos="fade-up" class="text-5xl font-extrabold text-center mb-4 gradient-text">
+      Our Clients
+    </h2>
+    <p data-aos="fade-up" data-aos-delay="100"
+      class="text-center text-gray-600 dark:text-gray-400 text-lg mb-16 max-w-2xl mx-auto">
+      Trusted by innovative schools and industry leaders
+    </p>
+
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
+      <div *ngFor="let client of clients; let i = index" [attr.data-aos]="'fade-up'"
+        [attr.data-aos-delay]="100 * (i + 1)"
+        class="group bg-white dark:bg-slate-900 rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transform hover:-translate-y-2 transition-all duration-300 border border-gray-200 dark:border-slate-700 h-full flex flex-col">
+        <div class="h-48 bg-gradient-to-br flex items-center justify-center relative overflow-hidden"
+          [ngClass]="client.iconBgClass">
+          <!-- Client Image Placeholder (will add later) -->
+          <img *ngIf="client.image" [src]="client.image" [alt]="client.name"
+            class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+
+          <!-- Icon Fallback -->
+          <svg *ngIf="!client.image"
+            class="w-20 h-20 text-white transform group-hover:scale-110 transition-transform duration-300 relative z-0"
+            fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" [attr.d]="client.iconPath"></path>
+          </svg>
+        </div>
+        <div class="p-6 flex-grow flex flex-col">
+          <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-2">{{client.name}}</h3>
+          <p class="text-gray-600 dark:text-gray-400 mb-4 flex-grow">
+            {{client.description}}
+          </p>
+          <div class="mt-auto">
+            <a *ngIf="client.link && client.link !== '#'" [href]="client.link" target="_blank"
+              class="inline-flex items-center text-purple-600 dark:text-purple-400 font-bold hover:text-purple-700 dark:hover:text-purple-300 transition-colors">
+              Visit Website
+              <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+              </svg>
+            </a>
+            <span *ngIf="!client.link || client.link === '#'" class="text-gray-400 dark:text-gray-500 font-medium italic">
+              Website Coming Soon
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- Contact Section -->
 <section id="contact" class="py-24 bg-gray-50 dark:bg-slate-800">
   <div class="container mx-auto px-6">
