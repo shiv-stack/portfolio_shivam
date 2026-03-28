@@ -1,8 +1,8 @@
 /* Profile Image Styles */
-img[alt*="Tushar Negi"] {
+img[alt*="Shivam Thapa"] {
   transition: transform 0.3s ease;
 }
 
-img[alt*="Tushar Negi"]:hover {
+img[alt*="Shivam Thapa"]:hover {
   transform: scale(1.05);
 }
